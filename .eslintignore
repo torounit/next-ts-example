@@ -1,0 +1,14 @@
+**/*.min.js
+**/*.build.js
+**/node_modules/**
+**/vendor/**
+**/wordpress/**
+build
+coverage
+cypress
+node_modules
+vendor
+.next
+.husky
+storybook-static
+out
