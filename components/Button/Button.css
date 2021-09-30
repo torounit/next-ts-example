@@ -2,11 +2,26 @@
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
   border: 0;
-  border-radius: 3em;
+  border-radius: 2em;
   cursor: pointer;
-  display: inline-block;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
+
+.Button-body {
+
+}
+.Button-startIcon {
+  width: 24px;
+  margin-left: -8px;
+
+}
+.Button-endIcon {
+  width: 24px;
+  margin-right: -8px;
+}
+
 .Button--primary {
   color: #fff;
   background-color: #1ea7fd;
@@ -18,7 +33,7 @@
 }
 .Button--small {
   font-size: 12px;
-  padding: 10px 16px;
+  padding: 10px 12px;
 }
 .Button--medium {
   font-size: 14px;
@@ -26,5 +41,5 @@
 }
 .Button--large {
   font-size: 16px;
-  padding: 12px 24px;
+  padding: 12px 28px;
 }

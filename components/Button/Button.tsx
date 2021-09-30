@@ -1,32 +1,37 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "./Button.css";
 
 type Prop = {
   primary?: boolean;
   backgroundColor?: string;
-  size?: string;
-  label: string;
+  size?: "small" | "medium" | "large";
+  children?: ReactNode;
   onClick?: () => void;
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
 };
 
-const Button: React.FC<Prop> = ({
+const Button: React.VFC<Prop> = ({
   primary = false,
   backgroundColor,
   size = "medium",
-  label,
+  children,
+  startIcon,
+  endIcon,
   ...props
-}) => {
-  const mode = primary ? "Button--primary" : "Button--secondary";
-  return (
-    <button
-      type="button"
-      className={["Button", `Button--${size}`, mode].join(" ")}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
+}) => (
+  <button
+    type="button"
+    className={`Button Button--${size} ${
+      primary ? "Button--primary" : "Button--secondary"
+    }`}
+    style={backgroundColor && { backgroundColor }}
+    {...props}
+  >
+    {startIcon ? <span className="Button-startIcon">{startIcon}</span> : null}
+    <span className="Button-body">{children}</span>
+    {endIcon ? <span className="Button-endIcon">{endIcon}</span> : null}
+  </button>
+);
 
 export default Button;

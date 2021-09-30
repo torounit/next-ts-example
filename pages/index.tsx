@@ -9,7 +9,7 @@ export default function Home(): JSX.Element {
       </Head>
 
       <main>
-        <Button primary label="ぼたんだよ" />
+        <Button primary>ぼたんだよ</Button>
       </main>
     </div>
   );
