@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Button.module.css";
+import "./Button.css";
 
 type Prop = {
   primary?: boolean;
@@ -16,13 +16,12 @@ const Button: React.FC<Prop> = ({
   label,
   ...props
 }) => {
-  const mode = primary ? styles.primary : styles.secondary;
-  const sizeMode = styles[`${size}`];
+  const mode = primary ? "Button--primary" : "Button--secondary";
   return (
     <button
       type="button"
-      className={[styles.button, mode, sizeMode].join(" ")}
-      style={backgroundColor ? { backgroundColor } : {}}
+      className={["Button", `Button--${size}`, mode].join(" ")}
+      style={backgroundColor && { backgroundColor }}
       {...props}
     >
       {label}

@@ -50,6 +50,7 @@ module.exports = {
     {
       files: ["**/*.stories.tsx"],
       rules: {
+        "import/no-extraneous-dependencies": "off",
         "import/no-anonymous-default-export": "off",
       },
     },
